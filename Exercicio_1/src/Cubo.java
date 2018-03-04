@@ -1,22 +1,26 @@
 
-public class Cubo extends Figura {
-
+public class Cubo extends Poligono {
+	
+	double largura;
+	
+	public Cubo(double b, double a, double c) {
+		super(b, a);
+		this.largura = c;
+	}
+	
 	@Override
 	public double area() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.base * this.altura;
 	}
 
 	@Override
 	public double perimetro() {
-		// TODO Auto-generated method stub
-		return 0;
+		return (this.altura) + (this.base) *2;
 	}
 
 	@Override
 	public double volume() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.altura*this.altura*this.largura;
 	}
 
 	@Override

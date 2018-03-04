@@ -1,20 +1,20 @@
 
 public class Circulo extends Figura {
-
-	public Circulo() {
-		// TODO Auto-generated constructor stub
+	
+	double raio;
+	
+	public Circulo(double r) {
+		this.raio = r;
 	}
 
 	@Override
 	public double area() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.raio*Math.PI;
 	}
 
 	@Override
 	public double perimetro() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 2*Math.PI*this.raio;
 	}
 
 	@Override

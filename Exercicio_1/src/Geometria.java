@@ -14,7 +14,7 @@ public class Geometria {
 			System.out.println(fig.area());
 			System.out.println(fig.perimetro());
 			System.out.println(fig.diagonal());
-			
+			System.out.println(fig.volume());			
 		}
 		
 	}
