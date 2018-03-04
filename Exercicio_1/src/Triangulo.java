@@ -1,14 +1,16 @@
 
 public class Triangulo extends Poligono {
 
-	public Triangulo(double l, double a) {
-		super(l, a);
-		// TODO Auto-generated constructor stub
+	double ladoC;
+	
+	public Triangulo(double b, double a, double c) {
+		super(b, a);
+		this.ladoC = c;
 	}
 
 	@Override
 	public double perimetro() {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
@@ -20,6 +22,12 @@ public class Triangulo extends Poligono {
 
 	@Override
 	public double area() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double volume() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

@@ -1,10 +1,6 @@
 
 public class Retangulo extends Poligono {
 	
-	double ladoA =10;
-	double ladoB=5;
-	
-	
 	
 	public Retangulo(double l, double a) {
 		super(l, a);
@@ -13,17 +9,21 @@ public class Retangulo extends Poligono {
 
 	@Override
 	public double perimetro() {
-		return (ladoA +ladoB)*4;
+		return this.base*2 +this.altura*2;
 	}
 
 	@Override
 	public double diagonal() {
-		// TODO Auto-generated method stub
-		return 0;
+		return Math.sqrt((Math.exp(this.altura)+Math.exp(this.base)));
 	}
 
 	@Override
 	public double area() {
+		return (this.base*2) + (this.altura*2);
+	}
+
+	@Override
+	public double volume() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

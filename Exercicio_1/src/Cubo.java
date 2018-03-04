@@ -1,9 +1,5 @@
 
-public class Circulo extends Figura {
-
-	public Circulo() {
-		// TODO Auto-generated constructor stub
-	}
+public class Cubo extends Figura {
 
 	@Override
 	public double area() {
@@ -28,7 +24,5 @@ public class Circulo extends Figura {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
-	
 
 }

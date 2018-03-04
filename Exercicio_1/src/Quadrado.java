@@ -1,8 +1,6 @@
 
 public class Quadrado extends Poligono{
 	
-	double ladoA =10;
-	
 	
 	public Quadrado(double l, double a) {
 		super(l, a);
@@ -11,17 +9,23 @@ public class Quadrado extends Poligono{
 	
 	@Override
 	public double diagonal() {
-		return altura * Math.sqrt(2);
+		return this.altura * Math.sqrt(2);
 	}
 
 	@Override
 	public double area() {
-		return base * altura;
+		return this.base * this.altura;
 	}
 
 	@Override
 	public double perimetro() {
-		return ladoA*4;
+		return this.base*4;
+	}
+
+	@Override
+	public double volume() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	

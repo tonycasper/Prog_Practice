@@ -1,15 +1,14 @@
 
 public class Losango extends Poligono{
 
-	public Losango(double l, double a) {
-		super(l, a);
+	public Losango(double b, double a) {
+		super(b, a);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public double perimetro() {
-		// TODO Auto-generated method stub
-		return 0;
+		return base*4;
 	}
 
 	@Override
@@ -20,6 +19,11 @@ public class Losango extends Poligono{
 
 	@Override
 	public double area() {
+		return base*altura;
+	}
+
+	@Override
+	public double volume() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
