@@ -1,17 +1,28 @@
 
-public class Quadrado extends Poligono implements Diagonal{
+public class Quadrado extends Poligono{
 	
-	double altura = 10;
-	double largura = 8;
-	double result = 0;
+	double ladoA =10;
+	
 	
 	public Quadrado(double l, double a) {
 		super(l, a);
 
 	}
 	
-	public double diagonal(double altura, double largura) {
-		return result = altura * Math.sqrt(2);
+	@Override
+	public double diagonal() {
+		return altura * Math.sqrt(2);
 	}
+
+	@Override
+	public double area() {
+		return base * altura;
+	}
+
+	@Override
+	public double perimetro() {
+		return ladoA*4;
+	}
+
 	
 }
