@@ -65,7 +65,9 @@ public class Cliente {
 	public void atualizar() {
 		String sqlUpdate = "UPDATE cliente SET nome=?, fone=?, email=? WHERE id=?";
 		// usando o try with resources do Java 7, que fecha o que abriu
-		try (Connection conn = obtemConexao(); PreparedStatement stm = conn.prepareStatement(sqlUpdate);) {
+		try (Connection conn = obtemConexao();
+		
+			PreparedStatement stm = conn.prepareStatement(sqlUpdate);) {
 			stm.setString(1, getNome());
 			stm.setString(2, getFone());
 			stm.setString(3, getEmail());
@@ -86,7 +88,7 @@ public class Cliente {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public void carregar() {
 		String sqlSelect = "SELECT nome, fone, email FROM cliente WHERE cliente.id = ?";
 		// usando o try with resources do Java 7, que fecha o que abriu

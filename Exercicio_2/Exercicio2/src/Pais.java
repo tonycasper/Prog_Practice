@@ -8,7 +8,7 @@ public class Pais {
 	private int id;
 	private String nome;
 	private double popu;
-	private double area;
+	private double area; 	
 
 	static {
 		try {
@@ -156,13 +156,99 @@ public class Pais {
 
 	public void setArea(double area) {
 		this.area = area;
-	}
+	} 
 	
 	public String toString() {
 		return "Pais [id=" + id + ", nome=" + nome + ", populacao=" + popu + ", area=" + area + "]";
 	}
 	
+	public Pais maiorNumHabi(){
+		String sqlMaiorCli ="SELECT id,nome,Max(populacao),area FROM cliente";
+		Pais paisMaiorPopu = new Pais();
+		
+		
+		try(Connection conn = obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlMaiorCli);)
+		{
+			try(ResultSet rs = stm.executeQuery();)
+			{
+				if(rs.next()) {
+					paisMaiorPopu.setId(rs.getInt("id"));
+					paisMaiorPopu.setNome(rs.getString("nome"));
+					paisMaiorPopu.setPopu(rs.getDouble("populacao"));
+					paisMaiorPopu.setArea(rs.getDouble("area"));
+				}
+				}catch(
+				SQLException e)
+			{
+					e.printStackTrace();
+			}}catch(
+			SQLException e1)
+		{
+				System.out.println(e1.getStackTrace());
+		}
+		return paisMaiorPopu;
+	}
 	
+	public Pais menorArea(){
+		String sqlMenorPais ="SELECT id,nome,populacao,Min(area) FROM pais";
+		Pais menorArea = new Pais();
+		
+		
+		try(Connection conn = obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlMenorPais);)
+		{
+			try(ResultSet rs = stm.executeQuery();)
+			{
+				if(rs.next()) {
+					menorArea.setId(rs.getInt("id"));
+					menorArea.setNome(rs.getString("nome"));
+					menorArea.setPopu(rs.getDouble("populacao"));
+					menorArea.setArea(rs.getDouble("area"));
+				}
+				}catch(
+				SQLException e)
+			{
+					e.printStackTrace();
+			}}catch(
+			SQLException e1)
+		{
+				System.out.println(e1.getStackTrace());
+		}
+		return menorArea;
+	}
 	
-	
+	public void vetor3paises() {
+		String sql3vetor = "SELECT TOP 3 nome FROM pais";
+		String[] vetor = new String[3];
+		
+		try(Connection conn = obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sql3vetor);)
+		{
+			try(ResultSet rs = stm.executeQuery();)
+			{
+				for(int i=0;i < 2;i++) {
+					
+					if(rs.next()) {
+						vetor[i] = rs.getString("nome");	
+					}
+				}
+				}catch(
+				SQLException e)
+			{
+					e.printStackTrace();
+			}}catch(
+			SQLException e1)
+		{
+				System.out.println(e1.getStackTrace());
+		}
+		for (int i = 0; i < vetor.length; i++) {
+		    System.out.println(vetor[i]);
+		}
+		
+	}
 }
+	
+	
+	
+	

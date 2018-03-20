@@ -21,8 +21,8 @@ public class ClienteTest {
 	@Before
 	public void setUp() throws Exception {
 		System.out.println("setup");
-		cliente = new Cliente(id, "Batista Cepelos", "(11) 91234-4321", "btcp@usjt.br");
-		copia = new Cliente(id, "Batista Cepelos", "(11) 91234-4321", "btcp@usjt.br");
+		cliente = new Cliente(id, "Andre Cesar", "(11) 13210-3213", "aga@usjt.br");
+		copia = new Cliente(id, "Andre Cesar", "(11) 32134-4321", "frw@usjt.br");
 		System.out.println(cliente);
 		System.out.println(copia);
 		System.out.println(id);
